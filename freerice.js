@@ -39,8 +39,8 @@ function puppeteerScript() {
     }
 
     function mainLoop() {
-        // Since the delay argument to `setTimeout` needs to change
-        // every iteration, we can't use `setInterval`. Recursion is
+        // Since the delay argument to setTimeout needs to change
+        // every iteration, we can't use setInterval. Recursion is
         // used instead.
         const delay = Math.round((Math.random() * 2) * 1000) + 3000;
         setTimeout(() => {
@@ -48,7 +48,7 @@ function puppeteerScript() {
             console.log(`${delay} milliseconds of delay`);
             main();
             // This does not trigger a stack overflow as expected, because
-            // since `setTimeout` is delegated to the browser to keep track
+            // since setTimeout is delegated to the browser to keep track
             // of, the previous call is destroyed.
             mainLoop();
         }, delay)
