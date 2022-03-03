@@ -6,6 +6,14 @@ and Puppeteer, which means it can run in the background without needing a graphi
 Handles the following edge cases:
 * Age verification screen
 
+Roadmap:
+* Simulate a real person going to bed (sleep within a window of time)
+* Simulate mouse movements for clicking for authenticity
+* More organic randomized click timeouts
+* Output from the internal browser console, out to the terminal
+
+## Running It
+
 Requires:
 * [NPM & NodeJS runtime](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
