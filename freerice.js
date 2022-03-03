@@ -58,7 +58,6 @@ function puppeteerScript() {
 }
 
 // Handles the age prompt upon first visit to page.
-// birthDateStr must be formatted like 'February 28, 2022'.
 async function doAgePrompt(page) {
     await page.evaluate(() => {
         let inputBox = document.getElementsByTagName('input')[0];
