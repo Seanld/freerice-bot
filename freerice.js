@@ -83,8 +83,10 @@ async function doAgePrompt(page) {
 puppeteer.use(StealthPlugin());
 
 (async () => {
+    // `headless: false` will open a Chrome window and show the operation live.
+    // `headless: true` will run it in the background with a Chrome window. Saves resources.
     const browser = await puppeteer.launch({
-        headless: false
+        headless: true
     });
     const page = (await browser.pages())[0];
     await page.goto(TARGET_URL);
