@@ -3,14 +3,12 @@
 Automatically answers simple math questions on [Freerice](https://freerice.com/), via NodeJS
 and Puppeteer, which means it can run in the background without needing a graphical display.
 
-Handles the following edge cases:
-* Age verification screen
-
 Roadmap:
-* Simulate a real person going to bed (sleep within a window of time)
-* Simulate mouse movements for clicking for authenticity
-* More organic randomized click timeouts
-* Output from the internal browser console, out to the terminal
+* ✔ Automatically handle the age verification screen
+* ⌛ Simulate a real person going to bed (sleep within a window of time)
+* ⌛ Simulate mouse movements for clicking for authenticity
+* ⌛ More organic randomized click timeouts
+* ⌛ Output from the internal browser console, out to the terminal
 
 ## Running It
 
