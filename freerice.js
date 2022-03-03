@@ -18,7 +18,7 @@ function puppeteerScript() {
             }
         }
         if (flag == false) {
-            option[0].click();
+            options[0].click();
         }
     }
 
@@ -103,10 +103,8 @@ puppeteer.use(StealthPlugin());
     // Now run the actual answer automation code.
     await page.evaluate(puppeteerScript);
 
-    await browser.close();
+    // This will immediately close the browser before actually answering questions.
+    // In order to stop the script, simply kill it from the terminal (Ctrl+C) it was
+    // launched from.
+    // await browser.close();
 })();
-
-
-//random time intervals, rare time delays
-//server idling with puppeteer to idle maximum efficiency
-//legrange broswer
