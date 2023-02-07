@@ -11,7 +11,7 @@ function puppeteerScript() {
     function submit(answer) {
         const options = document.querySelectorAll('.card-button');
         let flag = false;
-        for (let i of options) {
+        for (const i of options) {
             if (i.innerHTML == answer) {
                 i.click();
                 flag = true;
@@ -51,7 +51,7 @@ function puppeteerScript() {
             // since setTimeout is delegated to the browser to keep track
             // of, the previous call is destroyed.
             mainLoop();
-        }, delay)
+        }, delay);
     }
 
     mainLoop();
@@ -60,21 +60,21 @@ function puppeteerScript() {
 // Handles the age prompt upon first visit to page.
 async function doAgePrompt(page) {
     await page.evaluate(() => {
-        let inputBox = document.getElementsByTagName('input')[0];
+        const inputBox = document.getElementsByTagName('input')[0];
 
         // Clone the input box, and set values. This removes the event handlers
         // that override the date we insert, so it can't be changed back once we set it.
-        let inputBoxClone = inputBox.cloneNode(true);
+        const inputBoxClone = inputBox.cloneNode(true);
         inputBoxClone.className = inputBox.className;
         inputBoxClone.value = 'June 5, 1995';
 
         // Swap the original input box with the stunted one, that
         // has our new date inserted into it.
-        let inputBoxParent = inputBox.parentNode;
+        const inputBoxParent = inputBox.parentNode;
         inputBoxParent.replaceChild(inputBoxClone, inputBox);
 
         // Submit the input.
-        let ageSaveBtn = document.getElementsByClassName('age-screen-save-button')[0];
+        const ageSaveBtn = document.getElementsByClassName('age-screen-save-button')[0];
         ageSaveBtn.click();
     });
 }
@@ -94,7 +94,7 @@ puppeteer.use(StealthPlugin());
 
     // If visiting for the first time, an age prompt screen will appear.
     // This gives it a random value, and clicks through the prompt.
-    let url = await page.url();
+    const url = await page.url();
     if (url == 'https://freerice.com/age-screen') {
         await doAgePrompt(page);
     }
